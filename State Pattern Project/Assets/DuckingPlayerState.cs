@@ -10,7 +10,7 @@ public class DuckingPlayerState : IPlayerState
     // Start is called before the first frame update
     public void Enter(Player player)
     {
-        //Debug.Log("Entering State: Ducking");
+        Debug.Log("Entering State: Ducking");
         rbPlayer = player.GetComponent<Rigidbody>();
         rbPlayer.transform.localScale *= 0.5f;
         player.mCurrentState = this;
@@ -23,6 +23,13 @@ public class DuckingPlayerState : IPlayerState
             rbPlayer.transform.localScale *= 2.0f;
             StandingPlayerState standingState = new StandingPlayerState();
             standingState.Enter(player);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rbPlayer.transform.localScale *= 2.0f;
+            SuperJumpState superjumpState = new SuperJumpState();
+            superjumpState.Enter(player);
         }
     }
 }

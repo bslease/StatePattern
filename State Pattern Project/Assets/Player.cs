@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
         mCurrentState = new StandingPlayerState();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         mCurrentState.Execute(this);
     }

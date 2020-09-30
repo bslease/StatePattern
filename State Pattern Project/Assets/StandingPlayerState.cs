@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class StandingPlayerState : IPlayerState
 {
-
-    // Start is called before the first frame update
     public void Enter(Player player)
     {
-        //Debug.Log("Entering State: Standing");
+        Debug.Log("Entering State: Standing");
         player.mCurrentState = this;
     }
 

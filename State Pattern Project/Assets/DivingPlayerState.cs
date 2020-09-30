@@ -10,9 +10,9 @@ public class DivingPlayerState : IPlayerState
     // Start is called before the first frame update
     public void Enter(Player player)
     {
-        //Debug.Log("Entering State: Diving");
+        Debug.Log("Entering State: Diving");
         rbPlayer = player.GetComponent<Rigidbody>();
-        rbPlayer.AddForce(0, -1000 * Time.deltaTime, 0, ForceMode.VelocityChange);
+        rbPlayer.AddForce(0, -10000 * Time.deltaTime, 0, ForceMode.VelocityChange);
         player.mCurrentState = this;
     }
 
